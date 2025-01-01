@@ -16,7 +16,7 @@ spec:
     spec:
       containers:
       - name: medicure
-        image: nuthan555/myproject3:14
+        image: nuthan555/myproject3:$BUILD_NUMBER
         ports:
         - containerPort:8082
 
