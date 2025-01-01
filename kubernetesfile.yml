@@ -6,7 +6,7 @@ metadata:
   labels:
     app: healthcare
 spec:
-  replicas: 3  # Number of replicas (pods)
+  replicas: 1  # Number of replicas (pods)
   selector:
     matchLabels:
       app: healthcare
@@ -30,7 +30,7 @@ spec:
     app: healthcare  # Matches the label from the Deployment
   ports:
     - protocol: TCP
-      port: 8082  # Port exposed to other services or externally
+      port: 5000  # Port exposed to other services or externally
       targetPort: 8082  # Port on the container that the app listens on
-      nodePort: 30000
+      nodePort: 31110
   type: NodePort  # Internal service (use LoadBalancer for external access)
