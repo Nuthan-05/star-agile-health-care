@@ -1,0 +1,35 @@
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: healthcare-deployment  # Name of the Deployment
+  labels:
+    app: healthcare
+spec:
+  replicas: 3  # Number of replicas (pods)
+  selector:
+    matchLabels:
+      app: healthcare
+  template:
+    metadata:
+      labels:
+        app: healthcare
+    spec:
+      containers:
+      - name: healthcare-container
+        image: nuthan555/myproject3:7  # Replace with your actual image
+        ports:
+        - containerPort: 8082  # The port your app listens on inside the container
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: healthcare-service  # Name of the Service
+spec:
+  selector:
+    app: healthcare  # Matches the label from the Deployment
+  ports:
+    - protocol: TCP
+      port: 8082  # Port exposed to other services or externally
+      targetPort: 8082  # Port on the container that the app listens on
+  type: NodePort  # Internal service (use LoadBalancer for external access)
