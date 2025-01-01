@@ -1,0 +1,36 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: medicure-project
+  labels:
+    app: medicure-project
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: medicure-project
+  template:
+    metadata:
+      labels:
+        app: medicure-project
+    spec:
+      containers:
+      - name: medicure-project
+        image: nuthan555/myproject3:
+        ports:
+        - containerPort: 8082
+        
+
+
+kind: Service
+apiVersion: v1
+metadata:
+  name: medicure-project
+spec:
+  type: NodePort
+  ports:
+    - port: 8082
+      targetPort: 8082
+      nodePort: 30000
+  selector:
+    app: medicure-project
