@@ -12,11 +12,11 @@ spec:
   template:
     metadata:
       labels:
-        app: medicure-container
+        app: medicure
     spec:
       containers:
       - name: medicure
-        image: nuthan555/myproject3:12
+        image: nuthan555/myproject3:latest
         ports:
         - containerPort:8082
 
@@ -28,8 +28,10 @@ metadata:
 spec:
   selector:
     app: medicure
+  type: LoadBalancer
   ports:
-    - protocol: "TCP"
-      port: 80
+    - protocol: TCP
+      port: 5000
       targetPort: 8082
-  type: NodePort 
+      nodePort: 31110
+  
