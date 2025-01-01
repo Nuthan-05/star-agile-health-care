@@ -16,7 +16,7 @@ spec:
     spec:
       containers:
       - name: medicure
-        image: nuthan555/myproject3:latest
+        image: nuthan555/myproject3:14
         ports:
         - containerPort:8082
 
@@ -31,7 +31,7 @@ spec:
   type: LoadBalancer
   ports:
     - protocol: TCP
-      port: 5000
+      port: 80
       targetPort: 8082
       nodePort: 31110
   
