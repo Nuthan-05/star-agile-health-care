@@ -32,4 +32,5 @@ spec:
     - protocol: TCP
       port: 8082  # Port exposed to other services or externally
       targetPort: 8082  # Port on the container that the app listens on
+      nodePort: 30000
   type: NodePort  # Internal service (use LoadBalancer for external access)
