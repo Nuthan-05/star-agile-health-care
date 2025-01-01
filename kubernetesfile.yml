@@ -19,7 +19,6 @@ spec:
       - name: healthcare-container
         image: nuthan555/myproject2:4  # Replace with your actual image
         ports:
-        nodePort: 31115
         - containerPort: 8082  # The port your app listens on inside the container
 ---
 apiVersion: v1
