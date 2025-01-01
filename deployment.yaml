@@ -15,7 +15,7 @@ spec:
         app: medicure
     spec:
       containers:
-      - name: medicure-container
+      - name: medicure
         image: nuthan555/myproject3:7
         ports:
         - containerPort: 8082
