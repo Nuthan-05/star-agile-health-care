@@ -1,12 +1,13 @@
 apiVersion: v1
 kind: Service
 metadata:
-  name: medicure
+  name: healthcare-service  # Name of the Service
 spec:
   selector:
-    app: medicure
+    app: healthcare  # Matches the label from the Deployment
   ports:
     - protocol: TCP
-      port: 80
-      targetPort: 8082
-  type: LoadBalancer 
+      port: 5000  # Port exposed to other services or externally
+      targetPort: 8082  # Port on the container that the app listens on
+      nodePort: 31110
+  type: NodePort  # Internal service (use LoadBalancer for external access)
