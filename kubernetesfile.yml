@@ -17,7 +17,7 @@ spec:
     spec:
       containers:
       - name: healthcare-container
-        image: nuthan555/myproject2:12  # Replace with your actual image
+        image: nuthan555/myproject2:7  # Replace with your actual image
         ports:
         - containerPort: 8082  # The port your app listens on inside the container
 metadata:
@@ -36,7 +36,7 @@ spec:
     spec:
       containers:
       - name: healthcare-container
-        image: nuthan555/myproject2:4  # Replace with your actual image
+        image: nuthan555/myproject2:7  # Replace with your actual image
         ports:
         - containerPort: 8082  # The port your app listens on inside the container
 ---
