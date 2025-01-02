@@ -17,7 +17,7 @@ spec:
     spec:
       containers:
       - name: healthcare-container
-        image: nuthan555/myproject2:7  # Replace with your actual image
+        image: nuthan555/myproject2:8  # Replace with your actual image
         ports:
         - containerPort: 8082  # The port your app listens on inside the container
 metadata:
@@ -36,7 +36,7 @@ spec:
     spec:
       containers:
       - name: healthcare-container
-        image: nuthan555/myproject2:7  # Replace with your actual image
+        image: nuthan555/myproject2:8  # Replace with your actual image
         ports:
         - containerPort: 8082  # The port your app listens on inside the container
 ---
@@ -62,6 +62,6 @@ spec:
     - protocol: TCP
       port: 5000  # Port exposed to other services or externally
       targetPort: 8082  # Port on the container that the app listens on
-      nodePort: 32220
+      nodePort: 31111
   type: NodePort  # Internal service (use LoadBalancer for external access)
 
